@@ -1,0 +1,13 @@
+<%- include('../partials/navbar') %>
+<div class="container">
+<a href="/users/<%= user._id %>/posts" class="btn btn-danger mt-3">Back</a>
+<h1>This post was submitted by <%= user.username %> aka <%= user.name %>  </h1>
+<img src="<%= post.imgURL %> " alt="<%= post.caption %> ">
+<h2>caption:<%= post.caption %> </h2>
+<% if(currentUser.username==user.username){ %> 
+<form action="/users/<%= user._id %>/post/<%= post._id %>?_method=DELETE" method='POST'>
+    <button class="btn btn-warning">Delete</button>
+</form>
+<% } %> 
+</div>
+<%- include('../partials/footer') %>

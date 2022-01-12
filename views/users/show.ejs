@@ -1,0 +1,12 @@
+<%- include('../partials/navbar') %>
+<h1>All Users</h1>
+<div class="container border border-dark mt-3">
+<ul>
+    <% for(let user of users) {%> 
+        <li><%= user.name %> -- <a href="/users/<%= user._id %> "><%= user.username %> </a></li>
+        <% } %> 
+</ul>
+<div class="dropdown-divider"></div>
+<a href="/home" class="btn btn-danger mb-3">Back</a>
+</div>
+<%- include('../partials/footer') %>

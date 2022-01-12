@@ -1,0 +1,18 @@
+<%- include('../partials/navbar') %>
+<div class="container">
+<a href="/users" class="btn btn-danger mt-3 mb-3">Back</a>
+</div>
+<div class='container border border-dark'>
+<h1>The name is :<%= user.name %> </h1>
+<h2>The username is: <%= user.username %> </h2>
+<br>
+<div class="dropdown-divider"></div>
+<% if(currentUser.username==user.username) {%> 
+<a href="/users/<%= user._id %>/edit" class='btn btn-info btn-sm mb-3' ><h5>Edit</h5></a>
+<a href="/users/<%= user.id %>/newPost"  class='btn btn-primary btn-lg mb-3'>Add a new Post</a>
+<% } %> 
+</div>
+<div class="container mt-3">
+<a href="/users/<%= user._id %>/posts " class='btn btn-success'>Show all Posts</a>
+</div>
+<%- include('../partials/footer') %>

@@ -1,0 +1,17 @@
+<%- include('../partials/navbar') %> 
+<div class="container">
+<a href="/users/<%= user._id %> " class="btn btn-danger mt-3 mb-3">Back</a>
+<h1>New Post Form</h1>
+<form class='container pb-4' action="/users/<%= user._id %>/newPost" method="POST">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">ImageURL</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" name="imgURL" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Caption</label>
+      <input type="text" class="form-control" name="caption" id="exampleInputPassword1">
+    </div>
+    <button type="submit" class="btn btn-primary">Post</button>
+  </form>
+</div>
+<%- include('../partials/footer') %> 

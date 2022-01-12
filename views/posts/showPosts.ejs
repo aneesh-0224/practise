@@ -1,0 +1,19 @@
+<%- include('../partials/navbar') %> 
+<div class="container border border-dark mt-3">
+ <h1><%= user.name %>'s Posts </h1>
+ <h2>username is :<%= user.username %> </h2>
+ <% for(let post of posts) {%> 
+    <img src="<%= post.imgURL %>" alt="<%= post.caption %>"/>
+    <br>
+     <h3>caption:<%= post.caption %> </h3>
+     <div>
+     <a href="/users/<%= user._id %>/post/<%= post._id %>" class="btn btn-outline-primary mt-2 mb-3">More info</a>
+    </div>
+    <% } %> 
+    <% if(currentUser==user.username){ %> 
+<a href="/users/<%= user.id %>/newPost">Add a new Post</a>
+<% } %> 
+<div class="dropdown-divider"></div>
+<a href="/users/<%= user._id %>" class="btn btn-danger mb-3">Back</a>
+</div>
+<%- include('../partials/footer') %> 
